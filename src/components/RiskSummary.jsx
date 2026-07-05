@@ -1,5 +1,6 @@
-function RiskSummary() {
-  const risks = [
+function RiskSummary({ items }) {
+  // items comes from the backend: [{ title, value, color, icon, description }, ...]
+  const fallback = [
     {
       title: "Low Risk",
       value: "12 Systems",
@@ -29,6 +30,17 @@ function RiskSummary() {
       desc: "Pending audit observations",
     },
   ];
+
+  const risks =
+    items && items.length > 0
+      ? items.map((r) => ({
+          title: r.title,
+          value: r.value,
+          color: r.color,
+          icon: r.icon,
+          desc: r.description,
+        }))
+      : fallback;
 
   return (
     <>

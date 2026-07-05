@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import "../styles/contact.css";
+import { submitContact } from "../services/api";
 
 function Contact() {
   const form = useRef();
@@ -14,13 +14,15 @@ function Contact() {
     setLoading(true);
     setMessage("");
 
-    emailjs
-      .sendForm(
-        "service_secure_audit_hub",
-        "template_2celbbc",
-        form.current,
-        "oXva2C0WVJpIra4my"
-      )
+    const formData = new FormData(form.current);
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    submitContact(payload)
       .then(() => {
         setLoading(false);
         setMessage("success");
@@ -114,7 +116,7 @@ function Contact() {
 
             {message === "error" && (
               <div className="alert alert-danger">
-                ❌ Failed to send message.
+                ❌ Failed to send message. Please make sure the backend server is running.
               </div>
             )}
 

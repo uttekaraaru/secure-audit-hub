@@ -19,22 +19,22 @@ ChartJS.register(
   Legend
 );
 
-function AuditChart() {
+function AuditChart({ progress }) {
+  // progress comes from the backend: [{ standard, percent, color }, ...]
+  const fallback = [
+    { standard: "ISO 27001", percent: 82, color: "#0d6efd" },
+    { standard: "ISO 27002", percent: 75, color: "#20c997" },
+    { standard: "ISO 42001", percent: 68, color: "#ffc107" },
+  ];
+  const rows = progress && progress.length > 0 ? progress : fallback;
+
   const data = {
-    labels: [
-      "ISO 27001",
-      "ISO 27002",
-      "ISO 42001",
-    ],
+    labels: rows.map((r) => r.standard),
     datasets: [
       {
         label: "Audit Progress (%)",
-        data: [82, 75, 68],
-        backgroundColor: [
-          "#0d6efd",
-          "#20c997",
-          "#ffc107",
-        ],
+        data: rows.map((r) => r.percent),
+        backgroundColor: rows.map((r) => r.color),
         borderRadius: 10,
         borderSkipped: false,
       },
@@ -101,7 +101,7 @@ function AuditChart() {
         </h4>
 
         <span className="badge bg-primary">
-          3 Standards
+          {rows.length} Standards
         </span>
 
       </div>

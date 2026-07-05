@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "../styles/chatbot.css";
+import { sendChatMessage } from "../services/api";
 
 function ChatBot() {
   const [open, setOpen] = useState(false);
@@ -14,35 +15,16 @@ function ChatBot() {
 
   const [input, setInput] = useState("");
 
+  // One session id per browser tab load — the backend uses this to store chat history.
+  const sessionIdRef = useRef(
+    crypto.randomUUID ? crypto.randomUUID() : `session-${Date.now()}`
+  );
+
   const chatEndRef = useRef(null);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing]);
-
-  const getReply = (question) => {
-    const q = question.toLowerCase();
-
-    if (q.includes("27001"))
-      return "ISO 27001 is the international standard for Information Security Management Systems (ISMS).";
-
-    if (q.includes("27002"))
-      return "ISO 27002 provides guidance for implementing information security controls.";
-
-    if (q.includes("42001"))
-      return "ISO 42001 is the international standard for Artificial Intelligence Management Systems.";
-
-    if (q.includes("annex"))
-      return "Annex A contains 93 security controls divided into Organizational, People, Physical and Technological categories.";
-
-    if (q.includes("clause 6"))
-      return "Clause 6 covers Planning, Risk Assessment, Risk Treatment and Security Objectives.";
-
-    if (q.includes("risk"))
-      return "Risk Assessment identifies, evaluates and treats information security risks.";
-
-    return "I'm still learning. Future versions will use real AI to answer every ISO question.";
-  };
 
   const ask = (text) => {
     const userMsg = {
@@ -54,17 +36,27 @@ function ChatBot() {
 
     setTyping(true);
 
-    setTimeout(() => {
-      setTyping(false);
-
-      setMessages((prev) => [
-        ...prev,
-        {
-          sender: "bot",
-          text: getReply(text),
-        },
-      ]);
-    }, 900);
+    sendChatMessage(sessionIdRef.current, text)
+      .then((res) => {
+        setTyping(false);
+        setMessages((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text: res.reply,
+          },
+        ]);
+      })
+      .catch(() => {
+        setTyping(false);
+        setMessages((prev) => [
+          ...prev,
+          {
+            sender: "bot",
+            text: "⚠ Couldn't reach Secure Audit AI. Make sure the backend server is running.",
+          },
+        ]);
+      });
   };
 
   const sendMessage = () => {

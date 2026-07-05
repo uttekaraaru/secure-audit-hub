@@ -6,7 +6,7 @@ import {
 } from "chart.js";
 
 import { Doughnut } from "react-chartjs-2";
-import { complianceChart } from "../data/dashboardData";
+import { complianceChart as fallbackComplianceChart } from "../data/dashboardData";
 
 ChartJS.register(
   ArcElement,
@@ -14,7 +14,24 @@ ChartJS.register(
   Legend
 );
 
-function ComplianceChart() {
+function ComplianceChart({ slices }) {
+  // slices comes from the backend: [{ label, value, color }, ...]
+  // Falls back to the original static data if the backend hasn't responded yet.
+  const complianceChart = slices && slices.length > 0
+    ? {
+        labels: slices.map((s) => s.label),
+        datasets: [
+          {
+            label: "Compliance Status",
+            data: slices.map((s) => s.value),
+            backgroundColor: slices.map((s) => s.color),
+          },
+        ],
+      }
+    : fallbackComplianceChart;
+
+  const overallPercent = slices && slices.length > 0 ? slices[0].value : 82;
+
 
   const options = {
     responsive: true,
@@ -58,7 +75,7 @@ function ComplianceChart() {
         </h4>
 
         <span className="badge bg-success">
-          82%
+          {overallPercent}%
         </span>
 
       </div>
