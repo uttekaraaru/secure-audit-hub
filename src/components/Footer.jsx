@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer
@@ -8,9 +10,9 @@ function Footer() {
       }}
     >
       <div className="container py-5">
-
         <div className="row">
 
+          {/* About */}
           <div className="col-lg-4 mb-4">
 
             <h3 className="fw-bold">
@@ -24,34 +26,81 @@ function Footer() {
 
           </div>
 
+          {/* Quick Links */}
           <div className="col-lg-4 mb-4">
 
-            <h5 className="fw-bold">
-              Quick Links
-            </h5>
+            <h5 className="fw-bold">Quick Links</h5>
 
             <ul className="list-unstyled">
 
               <li className="mb-2">
-                Home
+                <Link
+                  to="/"
+                  className="text-white text-decoration-none"
+                >
+                  Home
+                </Link>
               </li>
 
               <li className="mb-2">
-                Dashboard
+                <Link
+                  to="/dashboard"
+                  className="text-white text-decoration-none"
+                >
+                  Dashboard
+                </Link>
               </li>
 
               <li className="mb-2">
-                Resources
+                <Link
+                  to="/iso27001"
+                  className="text-white text-decoration-none"
+                >
+                  ISO 27001
+                </Link>
+              </li>
+
+              <li className="mb-2">
+                <Link
+                  to="/iso27002"
+                  className="text-white text-decoration-none"
+                >
+                  ISO 27002
+                </Link>
+              </li>
+
+              <li className="mb-2">
+                <Link
+                  to="/iso42001"
+                  className="text-white text-decoration-none"
+                >
+                  ISO 42001
+                </Link>
+              </li>
+
+              <li className="mb-2">
+                <Link
+                  to="/resources"
+                  className="text-white text-decoration-none"
+                >
+                  Resources
+                </Link>
               </li>
 
               <li>
-                Contact
+                <Link
+                  to="/contact"
+                  className="text-white text-decoration-none"
+                >
+                  Contact
+                </Link>
               </li>
 
             </ul>
 
           </div>
 
+          {/* Contact */}
           <div className="col-lg-4 mb-4">
 
             <h5 className="fw-bold">
@@ -60,7 +109,13 @@ function Footer() {
 
             <p>
               <i className="bi bi-envelope-fill me-2"></i>
-              support@secureaudithub.com
+
+              <a
+                href="mailto:63aaradhyauttekar@gmail.com"
+                className="text-white text-decoration-none"
+              >
+                63aaradhyauttekar@gmail.com
+              </a>
             </p>
 
             <p>
@@ -70,20 +125,44 @@ function Footer() {
 
             <div className="mt-3">
 
-              <i
-                className="bi bi-github me-3"
-                style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              ></i>
+              {/* GitHub */}
+              <a
+                href="https://github.com/uttekaraaru"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white me-3"
+              >
+                <i
+                  className="bi bi-github"
+                  style={{ fontSize: "1.6rem" }}
+                ></i>
+              </a>
 
-              <i
-                className="bi bi-linkedin me-3"
-                style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              ></i>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/aaradhya-uttekar07028/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white me-3"
+              >
+                <i
+                  className="bi bi-linkedin"
+                  style={{ fontSize: "1.6rem" }}
+                ></i>
+              </a>
 
-              <i
-                className="bi bi-globe"
-                style={{ fontSize: "1.5rem", cursor: "pointer" }}
-              ></i>
+              {/* Live Website */}
+              <a
+                href="https://secure-audit-hub.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-white"
+              >
+                <i
+                  className="bi bi-globe"
+                  style={{ fontSize: "1.6rem" }}
+                ></i>
+              </a>
 
             </div>
 
@@ -94,9 +173,7 @@ function Footer() {
         <hr className="border-secondary" />
 
         <div className="text-center">
-
-          © 2026 Secure Audit Hub • All Rights Reserved
-
+          © 2026 Secure Audit Hub • Developed by <strong>Aaradhya Uttekar</strong>
         </div>
 
       </div>
