@@ -1,0 +1,33 @@
+.iso-page{
+
+background:#071A2D;
+
+min-height:100vh;
+
+color:white;
+
+}
+
+.content-card{
+
+background:#102840;
+
+padding:30px;
+
+border-radius:15px;
+
+margin-bottom:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.content-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+}

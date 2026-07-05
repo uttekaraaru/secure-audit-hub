@@ -1,0 +1,59 @@
+.dashboard {
+  background: #071A2D;
+  min-height: 100vh;
+  color: white;
+}
+
+.dashboard-card {
+  background: #102840;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 30px;
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
+
+.dashboard-card h2 {
+  font-size: 2.2rem;
+  margin-top: 10px;
+}
+
+.dashboard-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dashboard-card li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.dashboard-card li:last-child {
+  border-bottom: none;
+}
+
+.progress {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  font-weight: bold;
+}
+.dashboard-card {
+  background: #18324d;
+  color: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  transition: all .3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(13,110,253,.25);
+}

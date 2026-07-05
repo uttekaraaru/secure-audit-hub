@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:#071A2D;
+    color:white;
+    font-family:Segoe UI, sans-serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+.scroll-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+  transition: .3s;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-5px);
+  background: #0b5ed7;
+}
+.form-control {
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 10px rgba(13,110,253,.4);
+  border-color: #0d6efd;
+}
