@@ -8,73 +8,115 @@ function Dashboard() {
     <div className="dashboard">
       <div className="container py-5">
 
-        <h1 className="fw-bold mb-5">Dashboard</h1>
+        {/* Header */}
+        <div className="mb-5">
+          <h1 className="fw-bold text-white">
+            📊 Secure Audit Dashboard
+          </h1>
 
-        {/* Top Cards */}
+          <p className="text-light">
+            Monitor ISO compliance, audit activities, risk posture and security
+            metrics from one centralized dashboard.
+          </p>
+        </div>
+
+        {/* Statistics Cards */}
         <div className="row">
 
-          <div className="col-md-3 mb-4">
+          <div className="col-lg-3 col-md-6 mb-4">
             <div className="dashboard-card">
-              <h5>Compliance</h5>
-              <h2>82%</h2>
+              <h6 className="text-info">ISO Standards</h6>
+              <h2 className="fw-bold">3</h2>
+              <small>ISO 27001 • ISO 27002 • ISO 42001</small>
             </div>
           </div>
 
-          <div className="col-md-3 mb-4">
+          <div className="col-lg-3 col-md-6 mb-4">
             <div className="dashboard-card">
-              <h5>Risk Score</h5>
-              <h2>Medium</h2>
+              <h6 className="text-success">Compliance</h6>
+              <h2 className="fw-bold">82%</h2>
+              <small>Current Organization Score</small>
             </div>
           </div>
 
-          <div className="col-md-3 mb-4">
+          <div className="col-lg-3 col-md-6 mb-4">
             <div className="dashboard-card">
-              <h5>Documents</h5>
-              <h2>15</h2>
+              <h6 className="text-warning">Security Controls</h6>
+              <h2 className="fw-bold">93</h2>
+              <small>Annex A Controls</small>
             </div>
           </div>
 
-          <div className="col-md-3 mb-4">
+          <div className="col-lg-3 col-md-6 mb-4">
             <div className="dashboard-card">
-              <h5>Audit Tasks</h5>
-              <h2>32</h2>
+              <h6 className="text-danger">Risk Level</h6>
+              <h2 className="fw-bold">Medium</h2>
+              <small>Requires Continuous Monitoring</small>
             </div>
           </div>
 
         </div>
 
         {/* Compliance Progress */}
-        <div className="dashboard-card mt-4">
+        <div className="dashboard-card mt-2">
 
-          <h4>Compliance Progress</h4>
+          <div className="d-flex justify-content-between align-items-center">
+
+            <h4 className="mb-0">
+              Compliance Progress
+            </h4>
+
+            <span className="badge bg-success">
+              82%
+            </span>
+
+          </div>
 
           <div
             className="progress mt-4"
-            style={{ height: "25px" }}
+            style={{ height: "22px" }}
           >
+
             <div
-              className="progress-bar bg-success"
+              className="progress-bar progress-bar-striped progress-bar-animated bg-success"
               style={{ width: "82%" }}
             >
               82%
             </div>
+
           </div>
 
         </div>
 
-        {/* Recent Activities & Upcoming Audits */}
+        {/* Activity + Audit */}
         <div className="row mt-5">
 
           <div className="col-lg-6 mb-4">
 
-            <div className="dashboard-card">
+            <div className="dashboard-card h-100">
 
-              <h4>Recent Activities</h4>
+              <h4 className="mb-4">
+                📋 Recent Activities
+              </h4>
 
-              <ul className="mt-4">
-                <li>✅ ISO 27001 Policy Updated</li>
-                <li>✅ Internal Audit Completed</li>
-                <li>⚠ Risk Assessment Pending</li>
+              <ul className="list-group list-group-flush">
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  ✅ ISO 27001 Policy Updated
+                </li>
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  ✅ Internal Security Audit Completed
+                </li>
+
+                <li className="list-group-item bg-transparent text-warning border-secondary">
+                  ⚠ Risk Assessment Pending
+                </li>
+
+                <li className="list-group-item bg-transparent text-info border-secondary">
+                  📄 Security Documentation Reviewed
+                </li>
+
               </ul>
 
             </div>
@@ -83,14 +125,30 @@ function Dashboard() {
 
           <div className="col-lg-6 mb-4">
 
-            <div className="dashboard-card">
+            <div className="dashboard-card h-100">
 
-              <h4>Upcoming Audits</h4>
+              <h4 className="mb-4">
+                📅 Upcoming Audits
+              </h4>
 
-              <ul className="mt-4">
-                <li>📅 ISO 27001 Internal Audit</li>
-                <li>📅 ISO 42001 AI Review</li>
-                <li>📅 ISO 27002 Documentation Review</li>
+              <ul className="list-group list-group-flush">
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  ISO 27001 Internal Audit
+                </li>
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  ISO 27002 Documentation Review
+                </li>
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  ISO 42001 AI Governance Review
+                </li>
+
+                <li className="list-group-item bg-transparent text-white border-secondary">
+                  Supplier Security Assessment
+                </li>
+
               </ul>
 
             </div>
@@ -113,7 +171,9 @@ function Dashboard() {
         </div>
 
         {/* Risk Summary */}
-        <RiskSummary />
+        <div className="mt-4">
+          <RiskSummary />
+        </div>
 
       </div>
     </div>

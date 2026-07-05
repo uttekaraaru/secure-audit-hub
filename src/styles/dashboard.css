@@ -4,31 +4,59 @@
   color: white;
 }
 
+/* Dashboard Cards */
 .dashboard-card {
-  background: #102840;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 16px;
-  padding: 30px;
-  transition: 0.3s;
+  background: linear-gradient(145deg, #112B45, #18324d);
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  border-radius: 18px;
+  padding: 28px;
+  color: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s ease;
 }
 
 .dashboard-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+  transform: translateY(-8px);
+  border-color: #0d6efd;
+  box-shadow: 0 20px 40px rgba(13, 110, 253, 0.25);
 }
 
+/* Heading */
 .dashboard-card h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
   margin-top: 10px;
 }
 
+.dashboard-card h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.dashboard-card h6 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Text */
+.dashboard-card small {
+  color: #c7d8eb;
+}
+
+.dashboard-card p {
+  color: #dce8f7;
+}
+
+/* List */
 .dashboard-card ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
 .dashboard-card li {
-  padding: 10px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
@@ -36,24 +64,46 @@
   border-bottom: none;
 }
 
+/* Bootstrap List Group Override */
+.list-group-item {
+  background: transparent !important;
+  color: white !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+
+/* Progress Bar */
 .progress {
+  height: 22px;
+  background: rgba(255,255,255,.08);
   border-radius: 50px;
   overflow: hidden;
 }
 
 .progress-bar {
   font-weight: bold;
-}
-.dashboard-card {
-  background: #18324d;
-  color: white;
-  border-radius: 18px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  transition: all .3s ease;
+  border-radius: 50px;
 }
 
-.dashboard-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(13,110,253,.25);
+/* Badges */
+.badge {
+  font-size: .85rem;
+  padding: 8px 14px;
+}
+
+/* Charts */
+canvas {
+  max-width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .dashboard-card h2 {
+    font-size: 2rem;
+  }
+
 }

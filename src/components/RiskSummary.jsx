@@ -5,69 +5,84 @@ function RiskSummary() {
       value: "12 Systems",
       color: "#198754",
       icon: "🟢",
+      desc: "Systems operating securely",
     },
     {
       title: "Medium Risk",
       value: "5 Systems",
       color: "#ffc107",
       icon: "🟡",
+      desc: "Requires monitoring",
     },
     {
       title: "High Risk",
       value: "2 Systems",
       color: "#dc3545",
       icon: "🔴",
+      desc: "Immediate action required",
     },
     {
       title: "Open Findings",
       value: "9 Findings",
       color: "#0d6efd",
       icon: "📋",
+      desc: "Pending audit observations",
     },
   ];
 
   return (
-    <div className="row mt-4">
+    <>
+      <h3 className="text-white mt-5 mb-4">
+        🚨 Risk Summary
+      </h3>
 
-      {risks.map((risk, index) => (
+      <div className="row">
 
-        <div className="col-md-3 mb-4" key={index}>
+        {risks.map((risk, index) => (
 
-          <div
-            className="dashboard-card text-center"
-            style={{
-              borderTop: `4px solid ${risk.color}`,
-              transition: "0.3s",
-              cursor: "pointer",
-            }}
-          >
+          <div className="col-lg-3 col-md-6 mb-4" key={index}>
+
             <div
+              className="dashboard-card text-center"
               style={{
-                fontSize: "2.5rem",
-                marginBottom: "10px",
+                borderTop: `5px solid ${risk.color}`,
               }}
             >
-              {risk.icon}
+
+              <div
+                style={{
+                  fontSize: "2.8rem",
+                  marginBottom: "15px",
+                }}
+              >
+                {risk.icon}
+              </div>
+
+              <h5 className="fw-bold">
+                {risk.title}
+              </h5>
+
+              <h2
+                className="fw-bold"
+                style={{
+                  color: risk.color,
+                }}
+              >
+                {risk.value}
+              </h2>
+
+              <small className="text-light">
+                {risk.desc}
+              </small>
+
             </div>
-
-            <h5>{risk.title}</h5>
-
-            <h3
-              style={{
-                color: risk.color,
-                fontWeight: "bold",
-              }}
-            >
-              {risk.value}
-            </h3>
 
           </div>
 
-        </div>
+        ))}
 
-      ))}
-
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -35,6 +35,8 @@ function AuditChart() {
           "#20c997",
           "#ffc107",
         ],
+        borderRadius: 10,
+        borderSkipped: false,
       },
     ],
   };
@@ -42,14 +44,71 @@ function AuditChart() {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: {
+          color: "#ffffff",
+          font: {
+            size: 13,
+            weight: "bold",
+          },
+        },
+      },
+
+      tooltip: {
+        backgroundColor: "#112B45",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        borderColor: "#0d6efd",
+        borderWidth: 1,
+      },
+    },
+
+    scales: {
+      x: {
+        ticks: {
+          color: "#ffffff",
+        },
+        grid: {
+          color: "rgba(255,255,255,.08)",
+        },
+      },
+
+      y: {
+        beginAtZero: true,
+        max: 100,
+
+        ticks: {
+          color: "#ffffff",
+        },
+
+        grid: {
+          color: "rgba(255,255,255,.08)",
+        },
+      },
+    },
   };
 
   return (
     <div className="dashboard-card">
 
-      <h4 className="mb-4">
-        Audit Progress
-      </h4>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+
+        <h4 className="mb-0">
+          📈 Audit Progress
+        </h4>
+
+        <span className="badge bg-primary">
+          3 Standards
+        </span>
+
+      </div>
+
+      <p className="text-light mb-4">
+        Current audit completion percentage for implemented ISO standards.
+      </p>
 
       <div
         style={{
