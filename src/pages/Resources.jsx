@@ -1,5 +1,6 @@
 import { useState } from "react";
 import resources from "../data/resources";
+import "../styles/resources.css";
 
 function Resources() {
   const [search, setSearch] = useState("");
@@ -27,7 +28,7 @@ function Resources() {
       <div className="mb-4">
         <input
           type="text"
-          className="form-control form-control-lg"
+          className="form-control form-control-lg search-box"
           placeholder="🔍 Search ISO documents..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -90,10 +91,7 @@ function Resources() {
 
           <div className="col-lg-4 mb-4" key={item.id}>
 
-            <div
-              className="card h-100 shadow-lg border-0"
-              style={{ borderRadius: "18px" }}
-            >
+            <div className="card h-100 shadow-lg resource-card">
 
               <div className="card-body">
 
@@ -103,13 +101,13 @@ function Resources() {
 
                 <h4>{item.title}</h4>
 
-                <p className="text-muted">
+                <p className="text-light">
                   {item.description}
                 </p>
 
               </div>
 
-              <div className="card-footer bg-white border-0 pb-4">
+              <div className="card-footer resource-footer border-0 pb-4">
 
                 <a
                   href={item.file}

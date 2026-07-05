@@ -1,3 +1,5 @@
+import "../styles/iso.css";
+
 function ISO42001() {
   const principles = [
     {
@@ -21,11 +23,11 @@ function ISO42001() {
   return (
     <div className="container py-5">
 
-      <h1 className="fw-bold mb-3">
+      <h1 className="fw-bold text-white mb-3">
         ISO 42001
       </h1>
 
-      <p className="lead text-secondary mb-5">
+      <p className="lead text-light mb-5">
         ISO/IEC 42001 is the international standard for Artificial Intelligence
         Management Systems (AIMS). It helps organizations manage AI responsibly,
         securely and ethically.
@@ -37,18 +39,15 @@ function ISO42001() {
 
           <div className="col-md-6 mb-4" key={index}>
 
-            <div
-              className="card h-100 shadow border-0"
-              style={{ borderRadius: "15px" }}
-            >
+            <div className="card h-100 shadow iso-card">
 
               <div className="card-body">
 
-                <h4 className="text-primary">
+                <h4 className="text-info">
                   {item.title}
                 </h4>
 
-                <p className="mt-3 text-muted">
+                <p className="mt-3">
                   {item.desc}
                 </p>
 
@@ -62,7 +61,7 @@ function ISO42001() {
 
       </div>
 
-      <div className="card shadow border-0 mt-5">
+      <div className="card shadow mt-5 iso-table">
 
         <div className="card-body">
 
@@ -70,13 +69,15 @@ function ISO42001() {
             AI Management Lifecycle
           </h3>
 
-          <table className="table table-hover">
+          <table className="table table-dark table-hover">
 
-            <thead className="table-dark">
+            <thead>
+
               <tr>
                 <th>Phase</th>
                 <th>Description</th>
               </tr>
+
             </thead>
 
             <tbody>

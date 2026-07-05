@@ -1,3 +1,5 @@
+import "../styles/iso.css";
+
 function ISO27001() {
   const clauses = [
     {
@@ -40,11 +42,11 @@ function ISO27001() {
   return (
     <div className="container py-5">
 
-      <h1 className="fw-bold mb-3">
+      <h1 className="fw-bold text-white mb-3">
         ISO 27001
       </h1>
 
-      <p className="lead text-secondary mb-5">
+      <p className="lead text-light mb-5">
         ISO/IEC 27001 is the international standard for Information Security
         Management Systems (ISMS). It helps organizations protect confidential,
         integral and available information through a structured security framework.
@@ -56,10 +58,7 @@ function ISO27001() {
 
           <div className="col-md-6 col-lg-4 mb-4" key={index}>
 
-            <div
-              className="card h-100 shadow border-0"
-              style={{ borderRadius: "15px" }}
-            >
+            <div className="card h-100 shadow iso-card">
 
               <div className="card-body">
 
@@ -69,7 +68,7 @@ function ISO27001() {
 
                 <h5>{item.title}</h5>
 
-                <p className="text-muted mt-3">
+                <p>
                   {item.desc}
                 </p>
 
@@ -83,7 +82,7 @@ function ISO27001() {
 
       </div>
 
-      <div className="card shadow border-0 mt-5">
+      <div className="card shadow mt-5 iso-table">
 
         <div className="card-body">
 
@@ -91,9 +90,9 @@ function ISO27001() {
             Annex A Control Summary
           </h3>
 
-          <table className="table table-striped table-hover">
+          <table className="table table-dark table-hover">
 
-            <thead className="table-dark">
+            <thead>
 
               <tr>
                 <th>Category</th>
@@ -124,7 +123,7 @@ function ISO27001() {
                 <td>34</td>
               </tr>
 
-              <tr className="table-success fw-bold">
+              <tr className="fw-bold">
                 <td>Total Controls</td>
                 <td>93</td>
               </tr>

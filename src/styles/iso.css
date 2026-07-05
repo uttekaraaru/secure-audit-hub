@@ -1,0 +1,41 @@
+.iso-card{
+    background:#132F4C !important;
+    color:#fff !important;
+    border:1px solid #1E4D7A !important;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.iso-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.45);
+}
+
+.iso-card p{
+    color:#c9d8ea !important;
+}
+
+.iso-table{
+    background:#132F4C !important;
+    color:white !important;
+    border:1px solid #1E4D7A !important;
+    border-radius:15px;
+}
+
+.iso-table table{
+    margin-bottom:0;
+}
+
+.iso-table .table{
+    color:white;
+}
+
+.iso-table .table td,
+.iso-table .table th{
+    background:#132F4C !important;
+    border-color:#294b6c !important;
+}
+
+.iso-table .table thead th{
+    background:#0d2238 !important;
+}

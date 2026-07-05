@@ -1,5 +1,4 @@
 import hero from "../assets/hero.png";
-import CountUp from "react-countup";
 import "../styles/home.css";
 
 import Features from "../components/Features";
@@ -83,12 +82,8 @@ function Home() {
 
             <div className="col-md-3 mb-4">
               <div className="stat-box">
-                <h2 className="text-primary fw-bold">
-  <CountUp end={4} duration={2} />
-</h2>
-                <CountUp end={93} duration={2} />
-                </h2>
-                <p className="mb-0">
+                <h2 className="text-primary fw-bold">93</h2>
+                <p className="text-dark mb-0">
                   ISO 27001 Controls
                 </p>
               </div>
@@ -105,9 +100,7 @@ function Home() {
 
             <div className="col-md-3 mb-4">
               <div className="stat-box">
-                <h2 className="text-primary fw-bold">
-  <CountUp end={3} duration={2} />
-</h2>
+                <h2 className="text-primary fw-bold">3</h2>
                 <p className="text-dark mb-0">
                   ISO Standards
                 </p>
@@ -116,9 +109,7 @@ function Home() {
 
             <div className="col-md-3 mb-4">
               <div className="stat-box">
-                <h2 className="text-primary fw-bold">
-  <CountUp end={100} duration={2} />%
-</h2>
+                <h2 className="text-primary fw-bold">100%</h2>
                 <p className="text-dark mb-0">
                   Responsive Design
                 </p>
@@ -156,4 +147,4 @@ function Home() {
   );
 }
 
-export default Home;  
+export default Home;

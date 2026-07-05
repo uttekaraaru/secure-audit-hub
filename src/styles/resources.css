@@ -1,0 +1,47 @@
+/* Search Box */
+.search-box{
+    background:#132F4C !important;
+    border:1px solid #29557d !important;
+    color:white !important;
+}
+
+.search-box::placeholder{
+    color:#b5c9dc !important;
+}
+
+.search-box:focus{
+    background:#132F4C !important;
+    color:white !important;
+    border-color:#0d6efd !important;
+    box-shadow:none !important;
+}
+
+/* Resource Cards */
+.resource-card{
+    background:#132F4C !important;
+    color:white !important;
+    border:1px solid #29557d !important;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.resource-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 30px rgba(0,0,0,.45);
+}
+
+.resource-card h4{
+    color:white;
+}
+
+.resource-card p{
+    color:#d0dfef !important;
+}
+
+.resource-footer{
+    background:#132F4C !important;
+}
+
+.resource-card .btn{
+    border-radius:10px;
+}
