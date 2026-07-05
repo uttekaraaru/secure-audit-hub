@@ -1,73 +1,137 @@
-import "../styles/iso27001.css";
-
 function ISO27001() {
+  const clauses = [
+    {
+      no: "Clause 4",
+      title: "Context of the Organization",
+      desc: "Understand internal and external issues affecting the ISMS."
+    },
+    {
+      no: "Clause 5",
+      title: "Leadership",
+      desc: "Top management commitment, policy and organizational roles."
+    },
+    {
+      no: "Clause 6",
+      title: "Planning",
+      desc: "Risk assessment, objectives and treatment planning."
+    },
+    {
+      no: "Clause 7",
+      title: "Support",
+      desc: "Resources, competence, awareness and documented information."
+    },
+    {
+      no: "Clause 8",
+      title: "Operation",
+      desc: "Operational planning, implementation and risk treatment."
+    },
+    {
+      no: "Clause 9",
+      title: "Performance Evaluation",
+      desc: "Monitoring, internal audits and management reviews."
+    },
+    {
+      no: "Clause 10",
+      title: "Improvement",
+      desc: "Corrective actions and continual improvement."
+    }
+  ];
+
   return (
-    <div className="iso-page">
+    <div className="container py-5">
 
-      <div className="container py-5">
+      <h1 className="fw-bold mb-3">
+        ISO 27001
+      </h1>
 
-        <h1 className="display-4 fw-bold mb-3">
-          ISO 27001
-        </h1>
+      <p className="lead text-secondary mb-5">
+        ISO/IEC 27001 is the international standard for Information Security
+        Management Systems (ISMS). It helps organizations protect confidential,
+        integral and available information through a structured security framework.
+      </p>
 
-        <p className="lead mb-5">
-          Information Security Management System (ISMS)
-        </p>
+      <div className="row">
 
-        {/* Overview */}
+        {clauses.map((item, index) => (
 
-        <div className="content-card">
+          <div className="col-md-6 col-lg-4 mb-4" key={index}>
 
-          <h3>📖 Overview</h3>
+            <div
+              className="card h-100 shadow border-0"
+              style={{ borderRadius: "15px" }}
+            >
 
-          <p>
-            ISO 27001 is an international standard for establishing,
-            implementing, maintaining and continually improving an
-            Information Security Management System (ISMS).
-          </p>
+              <div className="card-body">
 
-        </div>
+                <span className="badge bg-primary mb-3">
+                  {item.no}
+                </span>
 
-        {/* Clauses */}
+                <h5>{item.title}</h5>
 
-        <div className="content-card">
+                <p className="text-muted mt-3">
+                  {item.desc}
+                </p>
 
-          <h3>📑 Main Clauses</h3>
+              </div>
 
-          <ul>
+            </div>
 
-            <li>Clause 4 - Context of the Organization</li>
+          </div>
 
-            <li>Clause 5 - Leadership</li>
+        ))}
 
-            <li>Clause 6 - Planning</li>
+      </div>
 
-            <li>Clause 7 - Support</li>
+      <div className="card shadow border-0 mt-5">
 
-            <li>Clause 8 - Operation</li>
+        <div className="card-body">
 
-            <li>Clause 9 - Performance Evaluation</li>
+          <h3 className="mb-4">
+            Annex A Control Summary
+          </h3>
 
-            <li>Clause 10 - Improvement</li>
+          <table className="table table-striped table-hover">
 
-          </ul>
+            <thead className="table-dark">
 
-        </div>
+              <tr>
+                <th>Category</th>
+                <th>Controls</th>
+              </tr>
 
-        {/* Controls */}
+            </thead>
 
-        <div className="content-card">
+            <tbody>
 
-          <h3>🛡 Annex A Controls</h3>
+              <tr>
+                <td>Organizational</td>
+                <td>37</td>
+              </tr>
 
-          <p>
-            ISO 27001 contains Annex A controls used to protect
-            organizational information assets through security controls.
-          </p>
+              <tr>
+                <td>People</td>
+                <td>8</td>
+              </tr>
 
-          <button className="btn btn-primary mt-3">
-            View Controls
-          </button>
+              <tr>
+                <td>Physical</td>
+                <td>14</td>
+              </tr>
+
+              <tr>
+                <td>Technological</td>
+                <td>34</td>
+              </tr>
+
+              <tr className="table-success fw-bold">
+                <td>Total Controls</td>
+                <td>93</td>
+              </tr>
+
+            </tbody>
+
+          </table>
 
         </div>
 
