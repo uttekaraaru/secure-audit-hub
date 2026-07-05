@@ -1,25 +1,31 @@
+import { Link } from "react-router-dom";
+
 function Features() {
   const features = [
     {
       icon: "bi-shield-check",
       title: "ISO Compliance",
-      text: "Manage ISO 27001, ISO 27002 and ISO 42001 standards."
+      text: "Manage ISO 27001, ISO 27002 and ISO 42001 standards.",
+      link: "/iso27001",
     },
     {
       icon: "bi-clipboard-check",
       title: "Audit Checklist",
-      text: "Track compliance using structured audit checklists."
+      text: "Track compliance using structured audit checklists.",
+      link: "/dashboard",
     },
     {
       icon: "bi-file-earmark-lock",
       title: "Documentation",
-      text: "Store policies, procedures and audit evidence securely."
+      text: "Store policies, procedures and audit evidence securely.",
+      link: "/resources",
     },
     {
       icon: "bi-bar-chart-line",
       title: "Dashboard",
-      text: "Visualize compliance progress using charts and reports."
-    }
+      text: "Visualize compliance progress using charts and reports.",
+      link: "/dashboard",
+    },
   ];
 
   return (
@@ -35,35 +41,44 @@ function Features() {
 
           <div className="col-md-6 col-lg-3 mb-4" key={index}>
 
-            <div
-              className="card h-100 border-0 shadow-lg"
-              style={{
-                background: "#18324d",
-                borderRadius: "18px"
-              }}
+            <Link
+              to={feature.link}
+              className="text-decoration-none"
             >
 
-              <div className="card-body text-center p-4">
+              <div
+                className="card h-100 border-0 shadow-lg"
+                style={{
+                  background: "#18324d",
+                  borderRadius: "18px",
+                  cursor: "pointer",
+                  transition: "0.3s",
+                }}
+              >
 
-                <i
-                  className={`bi ${feature.icon}`}
-                  style={{
-                    fontSize: "3.2rem",
-                    color: "#0d6efd"
-                  }}
-                ></i>
+                <div className="card-body text-center p-4">
 
-                <h5 className="mt-4 text-white">
-                  {feature.title}
-                </h5>
+                  <i
+                    className={`bi ${feature.icon}`}
+                    style={{
+                      fontSize: "3.2rem",
+                      color: "#0d6efd",
+                    }}
+                  ></i>
 
-                <p className="text-light">
-                  {feature.text}
-                </p>
+                  <h5 className="mt-4 text-white">
+                    {feature.title}
+                  </h5>
+
+                  <p className="text-light">
+                    {feature.text}
+                  </p>
+
+                </div>
 
               </div>
 
-            </div>
+            </Link>
 
           </div>
 

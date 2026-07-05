@@ -1,13 +1,20 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark shadow sticky-top"
+      style={{
+        background: "#071A2D",
+      }}
+    >
       <div className="container">
 
         {/* Logo */}
-        <NavLink className="navbar-brand fw-bold" to="/">
+        <NavLink
+          className="navbar-brand fw-bold fs-4"
+          to="/"
+        >
           🔐 Secure Audit Hub
         </NavLink>
 
@@ -22,9 +29,11 @@ function Navbar() {
         </button>
 
         {/* Menu */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-
-          <ul className="navbar-nav ms-auto">
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav ms-auto align-items-lg-center">
 
             <li className="nav-item">
               <NavLink className="nav-link" to="/">
@@ -55,11 +64,12 @@ function Navbar() {
                 ISO 42001
               </NavLink>
             </li>
+
             <li className="nav-item">
-  <NavLink className="nav-link" to="/resources">
-    Resources
-  </NavLink>
-</li>
+              <NavLink className="nav-link" to="/resources">
+                Resources
+              </NavLink>
+            </li>
 
             <li className="nav-item">
               <NavLink className="nav-link" to="/contact">
@@ -67,8 +77,17 @@ function Navbar() {
               </NavLink>
             </li>
 
-          </ul>
+            {/* CTA Button */}
+            <li className="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <NavLink
+                to="/dashboard"
+                className="btn btn-primary"
+              >
+                Open Dashboard
+              </NavLink>
+            </li>
 
+          </ul>
         </div>
 
       </div>

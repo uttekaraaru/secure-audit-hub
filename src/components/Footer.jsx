@@ -10,6 +10,7 @@ function Footer() {
       }}
     >
       <div className="container py-5">
+
         <div className="row">
 
           {/* About */}
@@ -24,75 +25,60 @@ function Footer() {
               ISO 27001, ISO 27002 and ISO 42001 standards.
             </p>
 
+            <p className="text-secondary mb-0">
+              Learn • Audit • Secure
+            </p>
+
           </div>
 
           {/* Quick Links */}
           <div className="col-lg-4 mb-4">
 
-            <h5 className="fw-bold">Quick Links</h5>
+            <h5 className="fw-bold mb-3">
+              Quick Links
+            </h5>
 
             <ul className="list-unstyled">
 
               <li className="mb-2">
-                <Link
-                  to="/"
-                  className="text-white text-decoration-none"
-                >
-                  Home
+                <Link to="/" className="text-white text-decoration-none">
+                  🏠 Home
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link
-                  to="/dashboard"
-                  className="text-white text-decoration-none"
-                >
-                  Dashboard
+                <Link to="/dashboard" className="text-white text-decoration-none">
+                  📊 Dashboard
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link
-                  to="/iso27001"
-                  className="text-white text-decoration-none"
-                >
-                  ISO 27001
+                <Link to="/iso27001" className="text-white text-decoration-none">
+                  🔐 ISO 27001
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link
-                  to="/iso27002"
-                  className="text-white text-decoration-none"
-                >
-                  ISO 27002
+                <Link to="/iso27002" className="text-white text-decoration-none">
+                  🛡 ISO 27002
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link
-                  to="/iso42001"
-                  className="text-white text-decoration-none"
-                >
-                  ISO 42001
+                <Link to="/iso42001" className="text-white text-decoration-none">
+                  🤖 ISO 42001
                 </Link>
               </li>
 
               <li className="mb-2">
-                <Link
-                  to="/resources"
-                  className="text-white text-decoration-none"
-                >
-                  Resources
+                <Link to="/resources" className="text-white text-decoration-none">
+                  📂 Resources
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/contact"
-                  className="text-white text-decoration-none"
-                >
-                  Contact
+                <Link to="/contact" className="text-white text-decoration-none">
+                  📩 Contact
                 </Link>
               </li>
 
@@ -103,7 +89,7 @@ function Footer() {
           {/* Contact */}
           <div className="col-lg-4 mb-4">
 
-            <h5 className="fw-bold">
+            <h5 className="fw-bold mb-3">
               Contact
             </h5>
 
@@ -119,13 +105,17 @@ function Footer() {
             </p>
 
             <p>
+              <i className="bi bi-geo-alt-fill me-2"></i>
+              Maharashtra, India
+            </p>
+
+            <p>
               <i className="bi bi-shield-lock-fill me-2"></i>
               ISO Compliance Platform
             </p>
 
-            <div className="mt-3">
+            <div className="mt-4">
 
-              {/* GitHub */}
               <a
                 href="https://github.com/uttekaraaru"
                 target="_blank"
@@ -134,11 +124,10 @@ function Footer() {
               >
                 <i
                   className="bi bi-github"
-                  style={{ fontSize: "1.6rem" }}
+                  style={{ fontSize: "1.7rem" }}
                 ></i>
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/aaradhya-uttekar07028/"
                 target="_blank"
@@ -147,11 +136,10 @@ function Footer() {
               >
                 <i
                   className="bi bi-linkedin"
-                  style={{ fontSize: "1.6rem" }}
+                  style={{ fontSize: "1.7rem" }}
                 ></i>
               </a>
 
-              {/* Live Website */}
               <a
                 href="https://secure-audit-hub.netlify.app/"
                 target="_blank"
@@ -160,11 +148,24 @@ function Footer() {
               >
                 <i
                   className="bi bi-globe"
-                  style={{ fontSize: "1.6rem" }}
+                  style={{ fontSize: "1.7rem" }}
                 ></i>
               </a>
 
             </div>
+
+            {/* Back To Top */}
+            <button
+              className="btn btn-outline-primary btn-sm mt-4"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
+              ⬆ Back to Top
+            </button>
 
           </div>
 
@@ -172,8 +173,14 @@ function Footer() {
 
         <hr className="border-secondary" />
 
-        <div className="text-center">
-          © 2026 Secure Audit Hub • Developed by <strong>Aaradhya Uttekar</strong>
+        <div className="text-center text-light">
+
+          © {new Date().getFullYear()} Secure Audit Hub
+
+          <br />
+
+          Developed with ❤️ by <strong>Aaradhya Uttekar</strong>
+
         </div>
 
       </div>

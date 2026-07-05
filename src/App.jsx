@@ -34,7 +34,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ScrollToTop />
-      <ChatBot />
+      
       <Footer />
     </>
   );

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import hero from "../assets/hero.png";
 import "../styles/home.css";
 
@@ -5,6 +6,8 @@ import Features from "../components/Features";
 import ISOStandards from "../components/ISOStandards";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Hero Section */}
@@ -31,11 +34,17 @@ function Home() {
               </p>
 
               <div className="mt-4">
-                <button className="btn btn-primary btn-lg me-3">
+                <button
+                  className="btn btn-primary btn-lg me-3"
+                  onClick={() => navigate("/iso27001")}
+                >
                   Explore Standards
                 </button>
 
-                <button className="btn btn-outline-light btn-lg">
+                <button
+                  className="btn btn-outline-light btn-lg"
+                  onClick={() => navigate("/resources")}
+                >
                   Learn More
                 </button>
               </div>
@@ -137,7 +146,10 @@ function Home() {
             modern web platform.
           </p>
 
-          <button className="btn btn-success btn-lg mt-3">
+          <button
+            className="btn btn-success btn-lg mt-3"
+            onClick={() => navigate("/iso27001")}
+          >
             Get Started
           </button>
 
