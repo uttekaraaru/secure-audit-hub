@@ -1,16 +1,40 @@
-# React + Vite
+# 🛡️ Secure Audit Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web platform for learning and auditing ISO 27001, ISO 27002 and ISO 42001 standards.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+https://secure-audit-hub.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- ISO 27001 Dashboard
+- ISO 27002 Controls
+- ISO 42001 AI Management
+- Resource Library
+- Contact Form (EmailJS)
+- Responsive Design
+- Dark UI
+- SEO Optimized
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Bootstrap 5
+- React Router
+- EmailJS
+- Netlify
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 👨‍💻 Author
+
+Aaradhya Uttekar
+
+LinkedIn:
+https://www.linkedin.com/in/aaradhya-uttekar07028/
+
+GitHub:
+https://github.com/uttekaraaru
+
+## 🌐 Live Website
+
+https://secure-audit-hub.netlify.app/
